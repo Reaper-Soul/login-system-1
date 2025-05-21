@@ -7,13 +7,13 @@
   <body>
     <h1>Login Form</h1>
 
-    <form action="/">
-      <label for="fname">First name:</label>
+    <form action="/validate.php" method="post">
+      <label for="username">Username:</label>
       <br>
-      <input type="text" id="fname" name="fname" value="John">
+      <input type="text" id="username" name="username">
       <br>
-      <label for="lname">Last name:</label><br>
-      <input type="text" id="lname" name="lname" value="Doe">
+      <label for="password">Password:</label><br>
+      <input type="password" id="password" name="password">
       <br><br>
       <input type="submit" value="Submit">
     </form>
