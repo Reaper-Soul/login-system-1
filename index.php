@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Navish Sharma</title>
-</head>
-<body>
+  <head>
+    <title>MIke</title>
+  </head>
 
-<h1>Assigment 1</h1>
-
-
-</body>
+  <body>
+    <h1>Assignment 1</h1>
+    <p><a href="/login.php">Click here to login</a></p>
+  </body>
 </html>
