@@ -1,21 +1,30 @@
 <?php
-
 session_start();
 
 $valid_username = "mike";
 $valid_password = "password";
 
-$username = $_REQUEST['username'];
-$password = $_REQUEST['password'];
+$username = $_POST['username'];
+$password = $_POST['password'];
 
-if ($valid_username == $username && $valid_password == $password) {
-    header('location: /');
+
+$_SESSION['username'] = $username;
+
+if ($valid_username === $username && $valid_password === $password) {
+    $_SESSION['authenticated'] = 1;
+    $_SESSION['failed_attempts'] = 0; //reset
+    header("Location: index.php");
+    exit();
 } else {
+
     if (!isset($_SESSION['failed_attempts'])) {
         $_SESSION['failed_attempts'] = 1;
     } else {
-        $_SESSION['failed_attempts'] = $_SESSION['failed_attempts'] + 1;
+        $_SESSION['failed_attempts'] += 1;
     }
 
-    echo "This is unsuccessful attempt number " . $_SESSION['failed_attempts'];
+    
+    echo "<p>This is unsuccessful attempt number " . $_SESSION['failed_attempts'] . "</p>";
+    echo "<p><a href='login.php'>Try Again</a></p>";
 }
+?>
